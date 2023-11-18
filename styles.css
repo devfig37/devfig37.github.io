@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,12 +7,9 @@ body {
     background-color: #000000;
 }
 
-.coming-soon-container {
-    text-align: center;
-    color: white;
-}
-
-img {
+.coming-soon-container img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: auto;
 }
