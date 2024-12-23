@@ -18,3 +18,15 @@ import '../styles/Navbar.css';
     <div class="hamburger">☰</div>
   </nav>
 </header>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger!.addEventListener('click', () => {
+      navLinks!.classList.toggle('active');
+      console.log("Toggled 'active' class on nav-links.");
+    });
+  });
+</script>
