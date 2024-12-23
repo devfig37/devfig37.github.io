@@ -10,6 +10,10 @@ nav {
     justify-content: space-between;
 }
 
+.logo {
+    margin-left: 25px;
+}
+
 .logo img {
     width: 120px; 
     height: auto;
@@ -53,6 +57,7 @@ nav {
 
     .logo {
         padding-top: 5px;
+        margin-left: 0px;
     }
 
     .logo img {
