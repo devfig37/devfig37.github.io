@@ -1,0 +1,44 @@
+---
+import '../styles/residential-projects.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FooterBar from '../components/FooterBar.astro';
+
+const projects = [
+  { id: 1, name: 'Kitchens', image: '/images/ijKitchen1.jpg' },
+  { id: 2, name: 'Garages', image: '/images/ijGarage1.jpg' },
+  { id: 3, name: 'Bathrooms', image: '/images/ijBathroom1.jpg' },
+];
+---
+
+<head>
+	<title>Residential Projects - IJ Construction Group</title>
+
+	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
+	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
+	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<Navbar />
+
+<main class="project-type-main">
+    <h1>Residential Projects</h1>
+    <div class="project-type-container">
+        {projects.map(project => (
+        <div class="project-card">
+            <img src={project.image} alt={project.name} />
+            <div class="card-info">
+            <h3>{project.name}</h3>
+            <a href='/id' class="view-more">View Pictures</a>
+            {/* <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a> */}
+            </div>
+        </div>
+        ))}
+    </div>
+</main>
+
+<Footer />
+<FooterBar />

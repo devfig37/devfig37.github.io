@@ -1,0 +1,46 @@
+---
+import '../styles/commercial-projects.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FooterBar from '../components/FooterBar.astro';
+
+const projects = [
+  { id: 1, name: 'Underground Utilities', image: '/images/ijUndergroundUtilities1.jpg' },
+  { id: 2, name: 'Turndown Slabs', image: '/images/ijTurndownSlab1.jpg' },
+  { id: 3, name: 'Storm System', image: '/images/ijStormsystem1.jpg' },
+  { id: 4, name: 'Sonotube Footings', image: '/images/ijSonotube1.jpg' },
+  { id: 5, name: 'Sidewalks', image: '/images/ijSidewalk1.jpg' },
+];
+---
+
+<head>
+	<title>Commercial Projects - IJ Construction Group</title>
+
+	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
+	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
+	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<Navbar />
+
+<main class="project-type-main">
+    <h1>Commercial Projects</h1>
+    <div class="project-type-container">
+        {projects.map(project => (
+        <div class="project-card">
+            <img src={project.image} alt={project.name} />
+            <div class="card-info">
+            <h3>{project.name}</h3>
+            <a href='/id' class="view-more">View Pictures</a>
+            {/* <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a> */}
+            </div>
+        </div>
+        ))}
+    </div>
+</main>
+
+<Footer />
+<FooterBar />
