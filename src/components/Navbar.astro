@@ -22,7 +22,7 @@ import '../styles/Navbar.css';
     const navLinks = document.querySelectorAll('.nav-links a');
   
     const updateActiveLink = () => {
-      const currentPage = window.location.pathname.replace('/devfig37', '') || '/'; 
+      const currentPage = window.location.pathname || '/'; 
 
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
