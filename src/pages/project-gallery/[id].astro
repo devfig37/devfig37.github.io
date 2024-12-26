@@ -14,6 +14,31 @@ export async function getStaticPaths() {
     images: string[];
     }
 
+    const sidewalkImages: any = await Astro.glob('../../assets/commercial/sidewalks/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const si = sidewalkImages.map((image: any) => {return image.src});
+
+    const sonotubFootingsImages: any = await Astro.glob('../../assets/commercial/sonotube-footings/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const sf = sonotubFootingsImages.map((image: any) => {return image.src});
+
+    const stormSystemImages: any = await Astro.glob('../../assets/commercial/storm-system/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const ss = stormSystemImages.map((image: any) => {return image.src});
+
+    const turndownSlabsImages: any = await Astro.glob('../../assets/commercial/turndown-slabs/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const ts = turndownSlabsImages.map((image: any) => {return image.src});
+
+    const undergroundUtilitesImages: any = await Astro.glob('../../assets/commercial/underground-utilities/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const uu = undergroundUtilitesImages.map((image: any) => {return image.src});
+
     const galleries: Record<string, Gallery> = {
         'Kitchens': {
             name: 'Kitchens',
@@ -48,6 +73,31 @@ export async function getStaticPaths() {
                      '/images/residential/bathrooms/ijBathroom4.jpg',
                      '/images/residential/bathrooms/ijBathroom5.jpg',
                     ],
+        },
+        'Side-Walks': {
+            name: 'Sidewalks',
+            type: 'Commercial', 
+            images: si,
+        },
+        'Sonotube-Footings': {
+            name: 'Sonotube Footings',
+            type: 'Commercial', 
+            images: sf,
+        },
+        'Storm-Systems': {
+            name: 'Storm Systems',
+            type: 'Commercial', 
+            images: ss,
+        },
+        'Turndown-Slabs': {
+            name: 'Turndown Slabs',
+            type: 'Commercial', 
+            images: ts,
+        },
+        'Underground-Utilities': {
+            name: 'Underground Utilities',
+            type: 'Commercial', 
+            images: uu,
         },
     };
 
