@@ -39,6 +39,11 @@ export async function getStaticPaths() {
     });
     const uu = undergroundUtilitesImages.map((image: any) => {return image.src});
 
+    const retainingWallsImages: any = await Astro.glob('../../assets/commercial/retaining-walls/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const rw = retainingWallsImages.map((image: any) => {return image.src});
+
     const galleries: Record<string, Gallery> = {
         'Kitchens': {
             name: 'Kitchens',
@@ -98,6 +103,11 @@ export async function getStaticPaths() {
             name: 'Underground Utilities',
             type: 'Commercial', 
             images: uu,
+        },
+        'Retaining-Walls': {
+            name: 'Retaining Walls',
+            type: 'Commercial', 
+            images: rw,
         },
     };
 
