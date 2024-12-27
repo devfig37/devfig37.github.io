@@ -4,6 +4,7 @@
     margin: 0 auto;
     padding: 20px;
     text-align: center;
+    margin-top: 30px;
 }
 
 .about-title {
@@ -17,4 +18,5 @@
     line-height: 1.6;
     color: #333;
     text-align: center; 
+    min-height: 31vh; 
 }
