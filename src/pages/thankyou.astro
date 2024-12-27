@@ -1,0 +1,32 @@
+---
+import '../styles/thankyou.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FooterBar from '../components/FooterBar.astro';
+---
+
+<head>
+	<title>Thank You - IJ Construction Group</title>
+
+	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
+	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
+	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<Navbar />
+
+<main>
+    <div class="thankyou-container">
+        <a href={`/`} class="back-home">Back to Home</a>
+        <h1 class="thankyou-title">Thank you!</h1>
+        <p class="thankyou-text">
+        We have received your message and contact information. We will be in touch shortly.
+        </p>
+    </div>
+</main>
+
+<Footer />
+<FooterBar />

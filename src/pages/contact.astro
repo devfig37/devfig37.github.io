@@ -20,7 +20,15 @@ import FooterBar from '../components/FooterBar.astro';
 
 <main class="contact-main">
   <h1>Contact Us</h1>
-  <form class="contact-form" action="/success" method="GET">
+  <div class="contact-form">
+  <form action="https://formsubmit.co/hector.figueroa@asu.edu" method="POST" />
+  <!-- <form class="contact-form" action="/success" method="GET"> -->
+    <div class="form-group">
+      <input type="hidden" name="_next" value="https://devfig37.github.io/thankyou/">
+      <input type="hidden" name="_subject" value="Contact Us - Web Email Submission">
+      <input type="hidden" name="_autoresponse" value="Thank you for your message! We will be contacting you shortly.">
+      <input type="hidden" name="_template" value="table">
+    </div>
     <div class="form-group">
       <label for="firstName">First Name</label>
       <input type="text" id="firstName" name="firstName" placeholder="Your First Name" required />
@@ -53,6 +61,7 @@ import FooterBar from '../components/FooterBar.astro';
     </div>
     <button type="submit" class="submit-button">Send Message</button>
   </form>
+</div>
 </main>
 
 <Footer />
