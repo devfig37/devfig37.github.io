@@ -67,6 +67,9 @@
 }
 
 @media (max-width: 615px) {
+    .gallery-image:hover {
+        transform: none; 
+    }
     .preview-image {
         max-width: 80%;
         max-height: 100%;
