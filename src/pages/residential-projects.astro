@@ -1,29 +1,26 @@
 ---
+import { Image } from 'astro:assets';
 import '../styles/residential-projects.css';
+import Head from '../components/Head.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Posthog from '../components/posthog.astro';
 import FooterBar from '../components/FooterBar.astro';
+import ijKitchen1 from '../../src/assets/residential/kitchens/ijKitchen1.jpg';
+import ijGarage1 from '../../src/assets/residential/garages/ijGarage1.jpg';
+import ijBathroom1 from '../../src/assets/residential/bathrooms/ijBathroom1.jpg';
+import ijStairsandRailings6 from '../../src/assets/residential/stairs-and-railings/ijStairsandRailings6.jpg';
+import ijStonewall5 from '../../src/assets/residential/stone-veneer-accent-walls/ijStonewall5.jpg';
 
 const projects = [
-  { id: 'kitchens',  type: 'Residential', name: 'Kitchens',  image: '/images/ijKitchen1.jpg' },
-  { id: 'garages',   type: 'Residential', name: 'Garages',   image: '/images/ijGarage1.jpg' },
-  { id: 'bathrooms', type: 'Residential', name: 'Bathrooms', image: '/images/ijBathroom1.jpg' },
+  { id: 'kitchens',                  type: 'Residential', name: 'Kitchens',                    image: ijKitchen1 },
+  { id: 'garages',                   type: 'Residential', name: 'Garages',                     image: ijGarage1 },
+  { id: 'bathrooms',                 type: 'Residential', name: 'Bathrooms',                   image: ijBathroom1 },
+  { id: 'stairs-and-railings',       type: 'Residential', name: 'Stairs and Railings',         image: ijStairsandRailings6 },
+  { id: 'stone-veneer-accent-walls', type: 'Residential', name: 'Stone Veneer - Accent Walls', image: ijStonewall5 },
 ];
 ---
 
-<head>
-	<title>Residential Projects - IJ Construction Group</title>
-
-	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
-	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
-	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <Posthog />
-</head>
+<Head title="Residential Projects"/>
 
 <Navbar />
 
@@ -33,7 +30,7 @@ const projects = [
     <div class="project-type-container">
         {projects.map(project => (
         <div class="project-card">
-            <img src={project.image} alt={project.name} />
+            <Image src={project.image} alt={project.name} />
             <div class="card-info">
             <h3>{project.name}</h3>
             <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a>

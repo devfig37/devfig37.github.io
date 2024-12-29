@@ -1,19 +1,43 @@
 ---
 import '../../styles/gallery.css';
+import { Image } from 'astro:assets';
+import Head from '../../components/Head.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
-import Posthog from '../../components/posthog.astro';
 import FooterBar from '../../components/FooterBar.astro';
-
-const { id } = Astro.params;
 
 export async function getStaticPaths() {
 
     interface Gallery {
     name: string;
     type: string;
-    images: string[];
+    images: any[];
     }
+
+    const bathroomImages: any = await Astro.glob('../../assets/residential/bathrooms/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const bi = bathroomImages.map((image: any) => {return image.src});
+
+    const garageImages: any = await Astro.glob('../../assets/residential/garages/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const g = garageImages.map((image: any) => {return image.src});
+
+    const kitchenImages: any = await Astro.glob('../../assets/residential/kitchens/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const k = kitchenImages.map((image: any) => {return image.src});
+
+    const stairsAndRailingsImages: any = await Astro.glob('../../assets/residential/stairs-and-railings/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const sr = stairsAndRailingsImages.map((image: any) => {return image.src});
+
+    const stoneVeneerAccentWallsImages: any = await Astro.glob('../../assets/residential/stairs-and-railings/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const svaw = stoneVeneerAccentWallsImages.map((image: any) => {return image.src});
 
     const sidewalkImages: any = await Astro.glob('../../assets/commercial/sidewalks/*').then(files => {
     return files.map(file => file.default);
@@ -45,40 +69,51 @@ export async function getStaticPaths() {
     });
     const rw = retainingWallsImages.map((image: any) => {return image.src});
 
+    const bridgesImages: any = await Astro.glob('../../assets/commercial/bridges/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const b = bridgesImages.map((image: any) => {return image.src});
+
+    const stampedConcreteImages: any = await Astro.glob('../../assets/commercial/stamped-concrete/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const sc = stampedConcreteImages.map((image: any) => {return image.src});
+
+    const stoneVeneerImages: any = await Astro.glob('../../assets/commercial/stone-veneer/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const sv = stoneVeneerImages.map((image: any) => {return image.src});
+
+    const subwayImages: any = await Astro.glob('../../assets/commercial/subways/*').then(files => {
+    return files.map(file => file.default);
+    });
+    const s = subwayImages.map((image: any) => {return image.src});
+
     const galleries: Record<string, Gallery> = {
         'kitchens': {
             name: 'Kitchens',
             type: 'Residential', 
-            images: ['/images/residential/kitchens/ijKitchen1.jpg', 
-                     '/images/residential/kitchens/ijKitchen2.jpg',
-                     '/images/residential/kitchens/ijKitchen3.jpg',
-                     '/images/residential/kitchens/ijKitchen4.jpg',
-                     '/images/residential/kitchens/ijKitchen5.jpg',
-                     '/images/residential/kitchens/ijKitchen6.jpg',
-                     '/images/residential/kitchens/ijKitchen7.jpg',
-                    ],
+            images: k,
         },
         'garages': {
             name: 'Garages',
             type: 'Residential', 
-            images: ['/images/residential/garages/ijGarage1.jpg', 
-                     '/images/residential/garages/ijGarage2.jpg',
-                     '/images/residential/garages/ijGarage3.jpg',
-                     '/images/residential/garages/ijGarage4.jpg',
-                     '/images/residential/garages/ijGarage5.jpg',
-                     '/images/residential/garages/ijGarage6.jpg',
-                     '/images/residential/garages/ijGarage7.jpg',
-                    ],
+            images: g,
         },
         'bathrooms': {
             name: 'Bathrooms',
             type: 'Residential', 
-            images: ['/images/residential/bathrooms/ijBathroom1.jpg', 
-                     '/images/residential/bathrooms/ijBathroom2.jpg',
-                     '/images/residential/bathrooms/ijBathroom3.jpg',
-                     '/images/residential/bathrooms/ijBathroom4.jpg',
-                     '/images/residential/bathrooms/ijBathroom5.jpg',
-                    ],
+            images: bi,
+        },
+        'stairs-and-railings': {
+            name: 'Stairs and Railings',
+            type: 'Residential', 
+            images: sr,
+        },
+        'stone-veneer-accent-walls': {
+            name: 'Stone Veneer - Accent Walls',
+            type: 'Residential', 
+            images: svaw,
         },
         'side-walks': {
             name: 'Sidewalks',
@@ -110,6 +145,26 @@ export async function getStaticPaths() {
             type: 'Commercial', 
             images: rw,
         },
+        'bridges': {
+            name: 'Bridges',
+            type: 'Commercial', 
+            images: b,
+        },
+        'stamped-concrete': {
+            name: 'Stamped Concrete',
+            type: 'Commercial', 
+            images: sc,
+        },
+        'stone-veneer': {
+            name: 'Stone Veneer',
+            type: 'Commercial', 
+            images: sv,
+        },
+        'subways': {
+            name: 'Subways',
+            type: 'Commercial', 
+            images: s,
+        },
     };
 
     const paths = Object.keys(galleries).map((key) => ({
@@ -123,18 +178,7 @@ export async function getStaticPaths() {
     const gallery = Astro.props?.gallery;
 ---
 
-<head>
-	<title>Gallery - IJ Construction Group</title>
-
-	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
-	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
-	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <Posthog />
-</head>
+<Head title="Gallery"/>
 
 <Navbar />
 
@@ -182,7 +226,7 @@ export async function getStaticPaths() {
         const images = document.querySelectorAll('.gallery-image');
         images.forEach((img) => {
             img.addEventListener('click', () => {
-                const src = img.getAttribute('src'); // Get the image source
+                const src = img.getAttribute('src');
                 if (src) {
                     openPreview(src);
                 }
