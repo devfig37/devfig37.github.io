@@ -8,14 +8,6 @@ import ijJob3 from '../../src/assets/slideshow/ijJob3.jpeg';
 const images = [ijJob1, ijJob2, ijJob3];
 ---
 
-<!-- Images not optimized -->
-<!-- <div class="slideshow">
-    <div class="slide" style="background-image: url('/images/ijJob1.jpeg');"></div>
-    <div class="slide" style="background-image: url('/images/ijJob2.jpeg');"></div>
-    <div class="slide" style="background-image: url('/images/ijJob3.jpeg');"></div>
-</div> -->
-
-<!-- Images optimized -->  
 <div class="slideshow">
     {images.map((image, index) => (
         <Image 
@@ -25,7 +17,6 @@ const images = [ijJob1, ijJob2, ijJob3];
         />
     ))}
 </div>
-
 
 <script>
   

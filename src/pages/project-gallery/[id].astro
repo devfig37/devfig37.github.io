@@ -17,77 +17,77 @@ export async function getStaticPaths() {
     const bathroomImages: any = await Astro.glob('../../assets/residential/bathrooms/*').then(files => {
     return files.map(file => file.default);
     });
-    const bi = bathroomImages.map((image: any) => {return image.src});
+    const bi = bathroomImages.map((image: any) => {return image});
 
     const garageImages: any = await Astro.glob('../../assets/residential/garages/*').then(files => {
     return files.map(file => file.default);
     });
-    const g = garageImages.map((image: any) => {return image.src});
+    const g = garageImages.map((image: any) => {return image});
 
     const kitchenImages: any = await Astro.glob('../../assets/residential/kitchens/*').then(files => {
     return files.map(file => file.default);
     });
-    const k = kitchenImages.map((image: any) => {return image.src});
+    const k = kitchenImages.map((image: any) => {return image});
 
     const stairsAndRailingsImages: any = await Astro.glob('../../assets/residential/stairs-and-railings/*').then(files => {
     return files.map(file => file.default);
     });
-    const sr = stairsAndRailingsImages.map((image: any) => {return image.src});
+    const sr = stairsAndRailingsImages.map((image: any) => {return image});
 
     const stoneVeneerAccentWallsImages: any = await Astro.glob('../../assets/residential/stairs-and-railings/*').then(files => {
     return files.map(file => file.default);
     });
-    const svaw = stoneVeneerAccentWallsImages.map((image: any) => {return image.src});
+    const svaw = stoneVeneerAccentWallsImages.map((image: any) => {return image});
 
     const sidewalkImages: any = await Astro.glob('../../assets/commercial/sidewalks/*').then(files => {
     return files.map(file => file.default);
     });
-    const si = sidewalkImages.map((image: any) => {return image.src});
+    const si = sidewalkImages.map((image: any) => {return image});
 
     const sonotubFootingsImages: any = await Astro.glob('../../assets/commercial/sonotube-footings/*').then(files => {
     return files.map(file => file.default);
     });
-    const sf = sonotubFootingsImages.map((image: any) => {return image.src});
+    const sf = sonotubFootingsImages.map((image: any) => {return image});
 
     const stormSystemImages: any = await Astro.glob('../../assets/commercial/storm-system/*').then(files => {
     return files.map(file => file.default);
     });
-    const ss = stormSystemImages.map((image: any) => {return image.src});
+    const ss = stormSystemImages.map((image: any) => {return image});
 
     const turndownSlabsImages: any = await Astro.glob('../../assets/commercial/turndown-slabs/*').then(files => {
     return files.map(file => file.default);
     });
-    const ts = turndownSlabsImages.map((image: any) => {return image.src});
+    const ts = turndownSlabsImages.map((image: any) => {return image});
 
     const undergroundUtilitesImages: any = await Astro.glob('../../assets/commercial/underground-utilities/*').then(files => {
     return files.map(file => file.default);
     });
-    const uu = undergroundUtilitesImages.map((image: any) => {return image.src});
+    const uu = undergroundUtilitesImages.map((image: any) => {return image});
 
     const retainingWallsImages: any = await Astro.glob('../../assets/commercial/retaining-walls/*').then(files => {
     return files.map(file => file.default);
     });
-    const rw = retainingWallsImages.map((image: any) => {return image.src});
+    const rw = retainingWallsImages.map((image: any) => {return image});
 
     const bridgesImages: any = await Astro.glob('../../assets/commercial/bridges/*').then(files => {
     return files.map(file => file.default);
     });
-    const b = bridgesImages.map((image: any) => {return image.src});
+    const b = bridgesImages.map((image: any) => {return image});
 
     const stampedConcreteImages: any = await Astro.glob('../../assets/commercial/stamped-concrete/*').then(files => {
     return files.map(file => file.default);
     });
-    const sc = stampedConcreteImages.map((image: any) => {return image.src});
+    const sc = stampedConcreteImages.map((image: any) => {return image});
 
     const stoneVeneerImages: any = await Astro.glob('../../assets/commercial/stone-veneer/*').then(files => {
     return files.map(file => file.default);
     });
-    const sv = stoneVeneerImages.map((image: any) => {return image.src});
+    const sv = stoneVeneerImages.map((image: any) => {return image});
 
     const subwayImages: any = await Astro.glob('../../assets/commercial/subways/*').then(files => {
     return files.map(file => file.default);
     });
-    const s = subwayImages.map((image: any) => {return image.src});
+    const s = subwayImages.map((image: any) => {return image});
 
     const galleries: Record<string, Gallery> = {
         'kitchens': {
@@ -187,7 +187,7 @@ export async function getStaticPaths() {
     <h1>{gallery.name}</h1>
     <div class="gallery-container">
         {gallery.images.map((image, index) => (
-        <img 
+        <Image 
         src={image} 
         alt={`${gallery.name} Image`} 
         class="gallery-image"
