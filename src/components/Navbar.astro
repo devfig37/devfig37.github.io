@@ -15,21 +15,25 @@ import ijLogoAlt from '../../src/assets/logo/ijLogoAlt.png';
       <li><a href="/about">About</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
-    <div class="hamburger">☰</div>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </nav>
 </header>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-
     const navLinks = document.querySelectorAll('.nav-links a');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinksMobile = document.querySelector('.nav-links');
 
-    const normalizePath = (path:any) => {
+    const normalizePath = (path: any) => {
       return path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
     };
-  
+
     const updateActiveLink = () => {
       const currentPage = normalizePath(window.location.pathname || '/');
-
       navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
           link.classList.add('active'); 
@@ -40,14 +44,11 @@ import ijLogoAlt from '../../src/assets/logo/ijLogoAlt.png';
     };
 
     updateActiveLink();
-
     window.addEventListener('popstate', updateActiveLink);
-
-    const hamburger = document.querySelector('.hamburger');
-    const navLinksMobile = document.querySelector('.nav-links');
 
     hamburger!.addEventListener('click', () => {
       navLinksMobile!.classList.toggle('active');
+      hamburger!.classList.toggle('is-active');
     });
   });
 </script>
