@@ -8,9 +8,9 @@ const pageUrl = new URL(Astro.url.pathname, import.meta.env.SITE).toString();
 	
 	<title>{title} - IJ Construction Group</title>
 	
-	<link rel="icon" type="image/png" href="../assets/logo/ijLogoAlt.png" />
-	<link rel="icon" type="image/x-icon" href="../assets/logo/ijLogoAlt.png" />
-	<link rel="apple-touch-icon" href="../assets/logo/ijLogoAlt.png">
+	<link rel="icon" type="image/png" href={ijLogoAlt.src} />
+	<link rel="icon" type="image/x-icon" href={ijLogoAlt.src} />
+	<link rel="apple-touch-icon" href={ijLogoAlt.src}>
 
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
