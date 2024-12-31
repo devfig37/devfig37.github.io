@@ -6,7 +6,7 @@ import ijLogoAlt48x48 from "../assets/logo/ijLogoAlt48x48.png";
 import ijLogoAlt96x96 from "../assets/logo/ijLogoAlt96x96.png";
 import ijLogoAlt144x144 from "../assets/logo/ijLogoAlt144x144.png";
 import ijLogoAlt180x180 from "../assets/logo/ijLogoAlt180x180.png";
-const pageUrl = new URL(Astro.url.pathname, import.meta.env.SITE).toString();
+const currentPath = Astro.url.pathname;
 ---
 <head>
 	
@@ -23,7 +23,7 @@ const pageUrl = new URL(Astro.url.pathname, import.meta.env.SITE).toString();
 	<meta property="og:title" content=`${title} - IJ Construction Group`>
 	<meta property="og:description" content="IJ Construction Group, LLC, founded in 2023, is a woman/minority-owned masonry construction company dedicated to exceptional craftsmanship and strategic growth.">
 	<meta property="og:image" content={ijLogoAlt.src}>
-	<meta property="og:url" content={pageUrl}>
+	<meta property="og:url" content=`https://www.ijconstructiongroup.com${currentPath}`>
 	<meta property="og:type" content="website">
 
 	<Posthog />
