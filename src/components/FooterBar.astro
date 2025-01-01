@@ -1,5 +1,7 @@
 ---
 import '../styles/FooterBar.css';
+import { Image } from 'astro:assets';
+import astroLogo from '../assets/logo/astroLogo.png';
 ---
 <footer class="footer-bar">
     <div class="footer-bar-content">
@@ -9,7 +11,21 @@ import '../styles/FooterBar.css';
       <span class="divider">|</span>
       <span>Westchester License: WC-37011-H23</span>
       <span class="divider">|</span>
-      <span>Website by: <a href="#home">devfig37</a></span>
+      <span>Website by: <a href="javascript:void(0);">devfig37</a></span>
+      <span class="divider">|</span>
+      <span class="astro-logo-span">Built with: 
+        <a 
+          href="https://astro.build" 
+          target="_blank"
+          class="astro-logo-a"
+        >
+          <Image 
+            src={astroLogo} 
+            alt={'Astro Logo'} 
+            class="astro-logo"
+          />
+        </a>
+      </span>
     </div>
 </footer>
   
