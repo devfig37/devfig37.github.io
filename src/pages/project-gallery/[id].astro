@@ -1,0 +1,89 @@
+---
+import '../../styles/gallery.css';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import FooterBar from '../../components/FooterBar.astro';
+
+const { id } = Astro.params;
+
+export async function getStaticPaths() {
+
+    interface Gallery {
+    name: string;
+    type: string;
+    images: string[];
+    }
+
+    const galleries: Record<string, Gallery> = {
+        'Kitchens': {
+            name: 'Kitchens',
+            type: 'Residential', 
+            images: ['/images/residential/kitchens/ijKitchen1.jpg', 
+                     '/images/residential/kitchens/ijKitchen2.jpg',
+                     '/images/residential/kitchens/ijKitchen3.jpg',
+                     '/images/residential/kitchens/ijKitchen4.jpg',
+                     '/images/residential/kitchens/ijKitchen5.jpg',
+                     '/images/residential/kitchens/ijKitchen6.jpg',
+                     '/images/residential/kitchens/ijKitchen7.jpg',
+                    ],
+        },
+        'Garages': {
+            name: 'Garages',
+            type: 'Residential', 
+            images: ['/images/residential/garages/ijGarage1.jpg', 
+                     '/images/residential/garages/ijGarage2.jpg',
+                     '/images/residential/garages/ijGarage3.jpg',
+                     '/images/residential/garages/ijGarage4.jpg',
+                     '/images/residential/garages/ijGarage5.jpg',
+                     '/images/residential/garages/ijGarage6.jpg',
+                     '/images/residential/garages/ijGarage7.jpg',
+                    ],
+        },
+        'Bathrooms': {
+            name: 'Bathrooms',
+            type: 'Residential', 
+            images: ['/images/residential/bathrooms/ijBathroom1.jpg', 
+                     '/images/residential/bathrooms/ijBathroom2.jpg',
+                     '/images/residential/bathrooms/ijBathroom3.jpg',
+                     '/images/residential/bathrooms/ijBathroom4.jpg',
+                     '/images/residential/bathrooms/ijBathroom5.jpg',
+                    ],
+        },
+    };
+
+    const paths = Object.keys(galleries).map((key) => ({
+        params: { id: key },
+        props: { gallery: galleries[key] }, 
+    }));
+
+    return paths;
+    }
+
+    const gallery = Astro.props?.gallery;
+---
+
+<head>
+	<title>Gallery - IJ Construction Group</title>
+
+	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
+	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
+	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<Navbar />
+
+<main class="gallery-main">
+    <a href={`/${gallery.type.toLowerCase()}-projects`} class="back-to">Back to {gallery.type} Projects</a>
+    <h1>{gallery.name}</h1>
+    <div class="gallery-container">
+        {gallery.images.map((image) => (
+        <img src={image} alt={`${gallery.name} Image`} />
+        ))}
+    </div>
+</main>
+
+<Footer />
+<FooterBar />

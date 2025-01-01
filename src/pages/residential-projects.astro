@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import FooterBar from '../components/FooterBar.astro';
 
 const projects = [
-  { id: 1, name: 'Kitchens', image: '/images/ijKitchen1.jpg' },
-  { id: 2, name: 'Garages', image: '/images/ijGarage1.jpg' },
-  { id: 3, name: 'Bathrooms', image: '/images/ijBathroom1.jpg' },
+  { id: 'Kitchens',  type: 'Residential', name: 'Kitchens',  image: '/images/ijKitchen1.jpg' },
+  { id: 'Garages',   type: 'Residential', name: 'Garages',   image: '/images/ijGarage1.jpg' },
+  { id: 'Bathrooms', type: 'Residential', name: 'Bathrooms', image: '/images/ijBathroom1.jpg' },
 ];
 ---
 
@@ -25,6 +25,7 @@ const projects = [
 <Navbar />
 
 <main class="project-type-main">
+    <a href={`/projects`} class="view-more">Back to Projects</a>
     <h1>Residential Projects</h1>
     <div class="project-type-container">
         {projects.map(project => (
@@ -32,8 +33,7 @@ const projects = [
             <img src={project.image} alt={project.name} />
             <div class="card-info">
             <h3>{project.name}</h3>
-            <a href='/id' class="view-more">View Pictures</a>
-            {/* <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a> */}
+            <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a>
             </div>
         </div>
         ))}
