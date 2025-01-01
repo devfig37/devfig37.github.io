@@ -1,7 +1,12 @@
 ---
 import '../styles/ProjectsGallery.css';
+import { Image } from 'astro:assets';
+import ijSidewalk1 from '../../src/assets/projects-gallery/ijSidewalk1.jpg';
+import ijSonotube1 from '../../src/assets/projects-gallery/ijSonotube1.jpg';
+import ijStormsystem1 from '../../src/assets/projects-gallery/ijStormsystem1.jpg';
 ---
-<section class="projects">
+<!-- Images not optimized -->
+<!-- <section class="projects">
     <div class="project">
       <a href="/projects"><img src="/images/ijSidewalk1.jpg" alt="Project 1"></a>
     </div>
@@ -10,5 +15,18 @@ import '../styles/ProjectsGallery.css';
     </div>
     <div class="project">
       <a href="/projects"><img src="/images/ijStormsystem1.jpg" alt="Project 3"></a>
+    </div>
+</section>   -->
+
+<!-- Images optimized -->
+<section class="projects">
+    <div class="project">
+      <a href="/projects"><Image src={ijSidewalk1} alt={"Project 1"}/></a>
+    </div>
+    <div class="project">
+      <a href="/projects"><Image src={ijSonotube1} alt={"Project 2"}/></a>
+    </div>
+    <div class="project">
+      <a href="/projects"><Image src={ijStormsystem1} alt={"Project 3"}/></a>
     </div>
 </section>  
