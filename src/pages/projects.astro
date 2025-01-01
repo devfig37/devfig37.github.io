@@ -4,9 +4,9 @@ import { Image } from 'astro:assets';
 import Head from '../components/Head.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import ijJob1 from '../assets/slideshow/ijJob1.jpeg';
-import ijJob4 from '../assets/slideshow/ijJob4.jpeg';
 import FooterBar from '../components/FooterBar.astro';
+import ijCommercialHardhat1 from '../assets/projects/ijCommercialHardhat1.jpg';
+import ijResidentialToolbelt1 from '../assets/projects/ijResidentialToolbelt1.jpg';
 ---
 
 <Head title="Projects"/>
@@ -17,14 +17,14 @@ import FooterBar from '../components/FooterBar.astro';
     <h1>Projects</h1>
     <div class="projects-container">
         <div class="project-card">
-        <Image src={ijJob1} alt="Commercial Projects" />
+        <Image src={ijCommercialHardhat1} alt="Commercial Projects" />
         <div class="card-info">
             <h3>Commercial</h3>
             <a href="/commercial-projects" class="view-more">View More</a>
         </div>
         </div>
         <div class="project-card">
-        <Image src={ijJob4} alt="Residential Projects" />
+        <Image src={ijResidentialToolbelt1} alt="Residential Projects" />
         <div class="card-info">
             <h3>Residential</h3>
             <a href="/residential-projects" class="view-more">View More</a>
