@@ -1,0 +1,40 @@
+.footer-bar {
+  background-color: #222;
+  color: #fff;
+  text-align: center; 
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem; 
+  border-top: 1px solid #444; 
+}
+
+.footer-bar-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 1rem;
+}
+
+.footer-bar-content span {
+  margin: 0;
+}
+
+.footer-bar-content a {
+  color: #4caf50; 
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-bar-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-bar-content {
+    flex-direction: column; 
+    gap: 0.25rem; 
+  }
+
+  .footer-bar-content .divider {
+    display: none; 
+  }
+}
