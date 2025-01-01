@@ -1,0 +1,20 @@
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 1s;
+}
+
+.slide.active {
+    opacity: 1;
+}

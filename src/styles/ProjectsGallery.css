@@ -1,0 +1,25 @@
+.projects {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+}
+.project img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+.project img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        width: 110%;
+        margin-left: -12px;
+    }
+}

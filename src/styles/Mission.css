@@ -1,0 +1,43 @@
+.mission-section {
+    padding: 2rem;
+    background-color: #D3D3D3; 
+    justify-content: center;
+}
+
+.mission-content {
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.mission-content h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: -20px;
+    margin-bottom: 1rem; 
+    text-align: center;
+}
+
+.mission-content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6; 
+    text-align: justify; 
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.mission-content p::before,
+.mission-content p::after {
+    content: "";
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    border-top: 2px solid #ccc; 
+}
+
+@media (max-width: 768px) {
+    .mission-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
