@@ -1,4 +1,4 @@
-<!-- ---
+---
 import '../../styles/gallery.css';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
@@ -31,6 +31,13 @@ const gallery = galleries[id as keyof typeof galleries];
 if (!gallery) {
   throw new Error(`Gallery with id "${id}" not found`);
 }
+
+// TODO: change to work with projects
+export async function getStaticPaths() {
+  return;
+}
+
+const { project } = Astro.props;
 ---
 
 <head>
@@ -56,4 +63,4 @@ if (!gallery) {
 </main>
 
 <Footer />
-<FooterBar /> -->
+<FooterBar />
