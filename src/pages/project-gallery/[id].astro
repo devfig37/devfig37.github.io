@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     });
     const sr = stairsAndRailingsImages.map((image: any) => {return image});
 
-    const stoneVeneerAccentWallsImages: any = await Astro.glob('../../assets/residential/stairs-and-railings/*').then(files => {
+    const stoneVeneerAccentWallsImages: any = await Astro.glob('../../assets/residential/stone-veneer-accent-walls/*').then(files => {
     return files.map(file => file.default);
     });
     const svaw = stoneVeneerAccentWallsImages.map((image: any) => {return image});
