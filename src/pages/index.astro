@@ -1,28 +1,14 @@
 ---
+import Head from '../components/Head.astro';
 import Quote from '../components/Quote.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import Mission from '../components/Mission.astro';
-import Posthog from '../components/posthog.astro';
 import FooterBar from '../components/FooterBar.astro';
 import Slideshow from '../components/Slideshow.astro';
 import ProjectsGallery from '../components/ProjectsGallery.astro';
 ---
-
-<head>
-	
-	<title>Home - IJ Construction Group</title>
-	
-	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
-	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
-	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<Posthog />
-	
-</head>
+	<Head title="Home"/>
 	<Navbar />
 <main>
 	<Slideshow />

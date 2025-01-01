@@ -1,32 +1,36 @@
 ---
+import { Image } from 'astro:assets';
 import '../styles/commercial-projects.css';
+import Head from '../components/Head.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Posthog from '../components/posthog.astro';
 import FooterBar from '../components/FooterBar.astro';
+import ijBridge3 from '../../src/assets/commercial/bridges/ijBridge3.jpg';
+import ijSubway8 from '../../src/assets/commercial/subways/ijSubway8.jpg';
+import ijSidewalk1 from '../../src/assets/commercial/sidewalks/ijSidewalk1.jpg';
+import ijSonotube1 from '../../src/assets/commercial/sonotube-footings/ijSonotube1.jpg';
+import ijStoneveneer4 from '../../src/assets/commercial/stone-veneer/ijStoneveneer4.jpg';
+import ijStormsystem1 from '../../src/assets/commercial/storm-system/ijStormsystem1.jpg';
+import ijTurndownSlab1 from '../../src/assets/commercial/turndown-slabs/ijTurndownSlab1.jpg';
+import ijRetainingWall1 from '../../src/assets/commercial/retaining-walls/ijRetainingWall1.jpg';
+import ijStampedconcrete5 from '../../src/assets/commercial/stamped-concrete/ijStampedconcrete5.jpg';
+import ijUndergroundUtilities1 from '../../src/assets/commercial/underground-utilities/ijUndergroundUtilities1.jpg';
 
 const projects = [
-  { id: 'underground-utilities', type: 'Commercial', name: 'Underground Utilities', image: '/images/ijUndergroundUtilities1.jpg' },
-  { id: 'turndown-slabs',        type: 'Commercial', name: 'Turndown Slabs',        image: '/images/ijTurndownSlab1.jpg' },
-  { id: 'storm-systems',         type: 'Commercial', name: 'Storm System',          image: '/images/ijStormsystem1.jpg' },
-  { id: 'sonotube-footings',     type: 'Commercial', name: 'Sonotube Footings',     image: '/images/ijSonotube1.jpg' },
-  { id: 'side-walks',            type: 'Commercial', name: 'Sidewalks',             image: '/images/ijSidewalk1.jpg' },
-  { id: 'retaining-walls',       type: 'Commercial', name: 'Retaining Walls',       image: '/images/ijRetainingWall1.jpg' },
+  { id: 'underground-utilities', type: 'Commercial', name: 'Underground Utilities', image: ijUndergroundUtilities1 },
+  { id: 'turndown-slabs',        type: 'Commercial', name: 'Turndown Slabs',        image: ijTurndownSlab1 },
+  { id: 'storm-systems',         type: 'Commercial', name: 'Storm System',          image: ijStormsystem1 },
+  { id: 'sonotube-footings',     type: 'Commercial', name: 'Sonotube Footings',     image: ijSonotube1 },
+  { id: 'side-walks',            type: 'Commercial', name: 'Sidewalks',             image: ijSidewalk1 },
+  { id: 'retaining-walls',       type: 'Commercial', name: 'Retaining Walls',       image: ijRetainingWall1 },
+  { id: 'bridges',               type: 'Commercial', name: 'Bridges',               image: ijBridge3 },
+  { id: 'stamped-concrete',      type: 'Commercial', name: 'Stamped Concrete',      image: ijStampedconcrete5 },
+  { id: 'stone-veneer',          type: 'Commercial', name: 'Stone Veneer',          image: ijStoneveneer4 },
+  { id: 'subways',               type: 'Commercial', name: 'Subways',               image: ijSubway8 },
 ];
 ---
 
-<head>
-	<title>Commercial Projects - IJ Construction Group</title>
-
-	<link rel="icon" type="image/png" href="/images/ijLogoAlt.png" />
-	<link rel="icon" type="image/x-icon" href="/images/ijLogoAlt.png" />
-	<link rel="apple-touch-icon" href="/images/ijLogoAlt.png">
-
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <Posthog />
-</head>
+<Head title="Commercial Projects"/>
 
 <Navbar />
 
@@ -36,7 +40,7 @@ const projects = [
     <div class="project-type-container">
         {projects.map(project => (
         <div class="project-card">
-            <img src={project.image} alt={project.name} />
+            <Image src={project.image} alt={project.name} />
             <div class="card-info">
             <h3>{project.name}</h3>
             <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a>

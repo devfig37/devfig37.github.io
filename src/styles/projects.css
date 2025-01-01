@@ -3,6 +3,10 @@
     padding: 2rem;
 }
 
+.projects-main h1 {
+    font-size: 2.5rem;
+}
+
 .projects-container {
     display: grid; 
     grid-template-columns: repeat(2, minmax(300px, 1fr)); 

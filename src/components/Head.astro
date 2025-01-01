@@ -1,0 +1,18 @@
+---
+const { title } = Astro.props;
+import Posthog from "./posthog.astro";
+---
+<head>
+	
+	<title>{title} - IJ Construction Group</title>
+	
+	<link rel="icon" type="image/png" href="../assets/logo/ijLogoAlt.png" />
+	<link rel="icon" type="image/x-icon" href="../assets/logo/ijLogoAlt.png" />
+	<link rel="apple-touch-icon" href="../assets/logo/ijLogoAlt.png">
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<Posthog />
+	
+</head>
