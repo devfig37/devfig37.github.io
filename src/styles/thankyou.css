@@ -11,7 +11,7 @@
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    margin-top: 130px;
+    margin-top: 50px;
 }
 
 .thankyou-text {
@@ -20,7 +20,7 @@
     color: #333;
     text-align: center; 
     min-height: 31vh; 
-    margin-bottom: -100px;
+    margin-bottom: -20px;
 }
 
 @media(max-width: 768px){
