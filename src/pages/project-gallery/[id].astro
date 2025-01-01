@@ -139,11 +139,64 @@ export async function getStaticPaths() {
     <a href={`/${gallery.type.toLowerCase()}-projects`} class="back-to">Back to {gallery.type} Projects</a>
     <h1>{gallery.name}</h1>
     <div class="gallery-container">
-        {gallery.images.map((image) => (
-        <img src={image} alt={`${gallery.name} Image`} />
+        {gallery.images.map((image, index) => (
+        <img 
+        src={image} 
+        alt={`${gallery.name} Image`} 
+        class="gallery-image"
+        id={`image-${index}`}
+         />
         ))}
     </div>
 </main>
+
+<div class="preview-overlay" style="display: none;">
+    <div class="preview-frame">
+        <img src="" alt="Preview Image" class="preview-image" />
+        <button class="close-btn">X</button>
+    </div>
+</div>
+
+<script>
+    const openPreview = (image: string): void => {
+        const overlay = document.querySelector(".preview-overlay") as HTMLElement;
+        const previewImage = document.querySelector(".preview-image") as HTMLImageElement;
+
+        if (overlay && previewImage) {
+            previewImage.src = image;
+            overlay.style.display = "flex"; 
+        }
+    };
+
+    const closePreview = (): void => {
+        const overlay = document.querySelector(".preview-overlay") as HTMLElement;
+        if (overlay) {
+            overlay.style.display = "none"; 
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('.gallery-image');
+        images.forEach((img) => {
+            img.addEventListener('click', () => {
+                const src = img.getAttribute('src'); // Get the image source
+                if (src) {
+                    openPreview(src);
+                }
+            });
+        });
+
+        const overlay = document.querySelector('.preview-overlay') as HTMLElement;
+        if (overlay) {
+            overlay.addEventListener('click', closePreview);
+        }
+
+        const closeButton = document.querySelector('.close-btn') as HTMLElement;
+        if (closeButton) {
+            closeButton.addEventListener('click', closePreview);
+        }
+    });
+</script>
 
 <Footer />
 <FooterBar />
