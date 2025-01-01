@@ -19,23 +19,23 @@ import '../styles/Navbar.css';
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // const navLinks = document.querySelectorAll('.nav-links a');
   
-    const updateActiveLink = () => {
-      const currentPage = window.location.pathname.replace('/devfig37', '') || '/'; 
+    // const updateActiveLink = () => {
+    //   const currentPage = window.location.pathname.replace('/devfig37', '') || '/'; 
 
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active'); 
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    };
+    //   navLinks.forEach(link => {
+    //     if (link.getAttribute('href') === currentPage) {
+    //       link.classList.add('active'); 
+    //     } else {
+    //       link.classList.remove('active');
+    //     }
+    //   });
+    // };
 
-    updateActiveLink();
+    // updateActiveLink();
 
-    window.addEventListener('popstate', updateActiveLink);
+    // window.addEventListener('popstate', updateActiveLink);
 
     const hamburger = document.querySelector('.hamburger');
     const navLinksMobile = document.querySelector('.nav-links');
