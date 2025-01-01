@@ -40,6 +40,10 @@ nav {
 .nav-links a:hover {
     color: #ddd;
 }
+  
+.nav-links a.active {
+    color: #3E4094; 
+}
 
 .hamburger {
     display: none;

@@ -19,12 +19,29 @@ import '../styles/Navbar.css';
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
+    const navLinks = document.querySelectorAll('.nav-links a');
+  
+    const updateActiveLink = () => {
+      const currentPage = window.location.hash || '#home'; 
+
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    };
+
+    updateActiveLink();
+
+    window.addEventListener('hashchange', updateActiveLink);
+
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinksMobile = document.querySelector('.nav-links');
 
     hamburger!.addEventListener('click', () => {
-      navLinks!.classList.toggle('active');
-      console.log("Toggled 'active' class on nav-links.");
+      navLinksMobile!.classList.toggle('active');
     });
   });
 </script>
