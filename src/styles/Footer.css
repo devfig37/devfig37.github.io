@@ -12,13 +12,15 @@
     max-width: 900px;
     width: 100%;
     gap: 1.5rem;
+    padding-left: 100px;
 }
 
 .footer-logo {
     flex: 0.7;
     display: flex;
     align-items: center;
-    margin-top: 25px;
+    margin-top: 50px;
+    margin-right: 25px;
 }
 
 .footer-logo img {
@@ -73,10 +75,24 @@
     .footer-content {
         flex-direction: column;
         text-align: center;
+        padding-left: 0px;
     }
 
     .footer-contact {
         margin-left:30px;
+    }
+
+    .footer-logo {
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+
+    /* .footer-contact h3 {
+        margin-left: 5px;
+    } */
+
+    .footer-contact p {
+        margin-left: 32px;
     }
 
     .footer-logo,
