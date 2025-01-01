@@ -5,11 +5,11 @@ import Footer from '../components/Footer.astro';
 import FooterBar from '../components/FooterBar.astro';
 
 const projects = [
-  { id: 1, name: 'Underground Utilities', image: '/images/ijUndergroundUtilities1.jpg' },
-  { id: 2, name: 'Turndown Slabs', image: '/images/ijTurndownSlab1.jpg' },
-  { id: 3, name: 'Storm System', image: '/images/ijStormsystem1.jpg' },
-  { id: 4, name: 'Sonotube Footings', image: '/images/ijSonotube1.jpg' },
-  { id: 5, name: 'Sidewalks', image: '/images/ijSidewalk1.jpg' },
+  { id: 'Underground-Utilities', type: 'Commercial', name: 'Underground Utilities', image: '/images/ijUndergroundUtilities1.jpg' },
+  { id: 'Turndown-Slabs',        type: 'Commercial', name: 'Turndown Slabs',        image: '/images/ijTurndownSlab1.jpg' },
+  { id: 'Storm-Systems',         type: 'Commercial', name: 'Storm System',          image: '/images/ijStormsystem1.jpg' },
+  { id: 'Sonotube-Footings',     type: 'Commercial', name: 'Sonotube Footings',     image: '/images/ijSonotube1.jpg' },
+  { id: 'Side-Walks',            type: 'Commercial', name: 'Sidewalks',             image: '/images/ijSidewalk1.jpg' },
 ];
 ---
 
@@ -35,8 +35,7 @@ const projects = [
             <img src={project.image} alt={project.name} />
             <div class="card-info">
             <h3>{project.name}</h3>
-            <a href='/id' class="view-more">View Pictures</a>
-            {/* <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a> */}
+            <a href={`/project-gallery/${project.id}`} class="view-more">View Pictures</a>
             </div>
         </div>
         ))}
