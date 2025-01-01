@@ -34,7 +34,7 @@ if (!gallery) {
 
 // TODO: change to work with projects
 export async function getStaticPaths() {
-  return;
+  return [{ id: 'project1', name: 'Commercial Project 1', type: 'Commercial' }];
 }
 
 const { project } = Astro.props;
