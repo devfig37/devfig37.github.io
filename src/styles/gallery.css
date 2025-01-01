@@ -1,6 +1,7 @@
 .gallery-main {
     padding: 2rem;
     text-align: center;
+    min-height: 45vh; 
 }
 
 .gallery-main h1 {

@@ -45,7 +45,7 @@ export async function getStaticPaths() {
     const rw = retainingWallsImages.map((image: any) => {return image.src});
 
     const galleries: Record<string, Gallery> = {
-        'Kitchens': {
+        'kitchens': {
             name: 'Kitchens',
             type: 'Residential', 
             images: ['/images/residential/kitchens/ijKitchen1.jpg', 
@@ -57,7 +57,7 @@ export async function getStaticPaths() {
                      '/images/residential/kitchens/ijKitchen7.jpg',
                     ],
         },
-        'Garages': {
+        'garages': {
             name: 'Garages',
             type: 'Residential', 
             images: ['/images/residential/garages/ijGarage1.jpg', 
@@ -69,7 +69,7 @@ export async function getStaticPaths() {
                      '/images/residential/garages/ijGarage7.jpg',
                     ],
         },
-        'Bathrooms': {
+        'bathrooms': {
             name: 'Bathrooms',
             type: 'Residential', 
             images: ['/images/residential/bathrooms/ijBathroom1.jpg', 
@@ -79,32 +79,32 @@ export async function getStaticPaths() {
                      '/images/residential/bathrooms/ijBathroom5.jpg',
                     ],
         },
-        'Side-Walks': {
+        'side-walks': {
             name: 'Sidewalks',
             type: 'Commercial', 
             images: si,
         },
-        'Sonotube-Footings': {
+        'sonotube-footings': {
             name: 'Sonotube Footings',
             type: 'Commercial', 
             images: sf,
         },
-        'Storm-Systems': {
+        'storm-systems': {
             name: 'Storm Systems',
             type: 'Commercial', 
             images: ss,
         },
-        'Turndown-Slabs': {
+        'turndown-slabs': {
             name: 'Turndown Slabs',
             type: 'Commercial', 
             images: ts,
         },
-        'Underground-Utilities': {
+        'underground-utilities': {
             name: 'Underground Utilities',
             type: 'Commercial', 
             images: uu,
         },
-        'Retaining-Walls': {
+        'retaining-walls': {
             name: 'Retaining Walls',
             type: 'Commercial', 
             images: rw,
